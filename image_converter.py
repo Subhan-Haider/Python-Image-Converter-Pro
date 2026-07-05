@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 class ImageConverterApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Image Converter Pro")
+        self.root.title("Image Converter Studio")
         self.root.geometry("600x700")
         self.root.configure(padx=20, pady=20)
         
