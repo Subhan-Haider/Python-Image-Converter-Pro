@@ -11,8 +11,16 @@ class ImageConverterApp:
         self.root.configure(padx=20, pady=20)
         
         # Load Application Icon
-        icon_path_png = os.path.join(os.path.dirname(__file__), "icon.png")
-        icon_path_ico = os.path.join(os.path.dirname(__file__), "icon.ico")
+        import sys
+        def resource_path(relative_path):
+            try:
+                base_path = sys._MEIPASS
+            except Exception:
+                base_path = os.path.dirname(os.path.abspath(__file__))
+            return os.path.join(base_path, relative_path)
+            
+        icon_path_png = resource_path("icon.png")
+        icon_path_ico = resource_path("icon.ico")
         try:
             if os.path.exists(icon_path_png):
                 icon = tk.PhotoImage(file=icon_path_png)
