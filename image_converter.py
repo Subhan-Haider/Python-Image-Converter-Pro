@@ -10,6 +10,18 @@ class ImageConverterApp:
         self.root.geometry("600x700")
         self.root.configure(padx=20, pady=20)
         
+        # Load Application Icon
+        icon_path_png = os.path.join(os.path.dirname(__file__), "icon.png")
+        icon_path_ico = os.path.join(os.path.dirname(__file__), "icon.ico")
+        try:
+            if os.path.exists(icon_path_png):
+                icon = tk.PhotoImage(file=icon_path_png)
+                self.root.iconphoto(True, icon)
+            elif os.path.exists(icon_path_ico):
+                self.root.iconbitmap(icon_path_ico)
+        except Exception as e:
+            print(f"Failed to load icon: {e}")
+            
         # Variables
         self.input_folder = tk.StringVar()
         self.output_folder = tk.StringVar()

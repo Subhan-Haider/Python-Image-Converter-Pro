@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['c:\\Users\\setup\\Videos\\python image\\image_converter.py'],
+    ['image_converter.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['icon.ico'],
 )
